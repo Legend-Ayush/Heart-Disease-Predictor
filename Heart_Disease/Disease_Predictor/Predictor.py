@@ -1,15 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import os
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import classification_report
 
 
 # Load and prepare the dataset
-current_dir = os.path.dirname(os.path.abspath(__file__))
-csv_path = os.path.join(current_dir, "heart.csv")
 heart = pd.read_csv("heart.csv")
 X = heart.drop("target", axis=1)
 y = heart["target"]
@@ -226,3 +223,4 @@ elif page == "💬 About":
     **Thank you for exploring! 💓**
     """
     )
+
